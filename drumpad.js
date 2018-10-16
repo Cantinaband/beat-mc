@@ -1,11 +1,19 @@
-let drumpad = document.querySelector("#drumpad"),
-  context = new AudioContext();
+let drumpad = document.querySelector("#drumpad");
+let AudioContext = window.AudioContext || window.webkitAudioContext;
+
+let context = new AudioContext();
 
 const numerOfCols = 10;
 const numberOfColPads = 6;
 
 let pads = [];
 let soundBuffers = [];
+
+window.onload = function() {
+  for (let i = 0; i < numerOfCols * numberOfColPads; i++) {
+    getData(i);
+  }
+};
 createDrumpad(numerOfCols, numberOfColPads);
 
 function createDrumpad(cols, padsPerCol) {
@@ -41,12 +49,6 @@ function playSound(col, index) {
   sourceBuffer.connect(context.destination);
   sourceBuffer.start(0);
 }
-
-window.onload = function() {
-  for (let i = 0; i < numerOfCols * numberOfColPads; i++) {
-    getData(i);
-  }
-};
 
 function getData(i) {
   var request = new XMLHttpRequest();
