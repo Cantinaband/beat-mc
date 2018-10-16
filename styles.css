@@ -1,0 +1,27 @@
+html,
+body {
+  height: 100%;
+  background: darkgray;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+#drumpad {
+  display: flex;
+  height: 100%;
+}
+
+.col {
+  display: flex;
+  flex: 1;
+  margin: 0.1em;
+  opacity: 0.5;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.pad {
+  flex: 1;
+  background: pink;
+  margin: 0.05em;
+}
