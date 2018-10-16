@@ -55,9 +55,6 @@ function createDrumpad() {
       pad.classList.add("pad");
       pad.id = `${i}_${j}`;
       if (j === 0) pad.innerHTML = beatTypes[i].type;
-      pad.addEventListener("touchstart", () => {
-        playSound(i, j);
-      });
       pad.addEventListener("click", () => {
         playSound(i, j);
       });
